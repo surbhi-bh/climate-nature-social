@@ -15,148 +15,142 @@
         }
 
         body {
-            background-color: #fafafa;
+            background-color: #ffffff;
             font-family: 'Poppins', sans-serif;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         h1 {
             text-align: center;
-            margin-bottom: 60px;
-            color: #1a1a1a;
-            font-size: 2.2rem;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
+            margin-bottom: 48px;
+            color: #2c2c2c;
+            font-size: 1.75rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
         }
 
-        @media (min-width: 1200px) {
+        @media (min-width: 768px) {
             h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
         }
 
         .collage {
-            column-count: 3;
-            column-gap: 20px;
-            padding: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         .image-wrapper {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 6px;
+            transition: all 0.25s ease;
             background: white;
-            break-inside: avoid;
-            margin-bottom: 20px;
-            display: inline-block;
-            width: 100%;
+            border: 1px solid #e5e5e5;
+            overflow: hidden;
         }
 
         .image-wrapper a {
             display: block;
-            position: relative;
             cursor: pointer;
             text-decoration: none;
         }
 
-        .image-wrapper .expand-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            border-radius: 6px;
-            width: 36px;
-            height: 36px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: all 0.3s;
-            z-index: 20;
-            font-size: 18px;
-        }
-
-        .image-wrapper:hover .expand-btn {
-            opacity: 1;
-        }
-
-        .expand-btn:hover {
-            background: white;
-            transform: scale(1.1);
-        }
-
         .image-wrapper:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            border-color: #999;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
         }
 
         .image-wrapper img {
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.25s ease;
         }
 
         .image-wrapper:hover img {
-            transform: scale(1.02);
+            opacity: 0.92;
         }
 
         .image-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.55) 70%, transparent 100%);
-            padding: 20px 16px 16px;
-            pointer-events: none;
-            z-index: 10;
+            background: linear-gradient(to bottom, #f8f8f8 0%, #fafafa 100%);
+            padding: 12px 14px;
+            border-top: 1px solid #e0e0e0;
         }
 
         .image-info p {
-            color: white;
-            font-size: 0.75rem;
-            margin: 3px 0;
+            color: #555;
+            font-size: 0.72rem;
+            margin: 5px 0;
             font-weight: 400;
-            line-height: 1.5;
+            line-height: 1.65;
+            letter-spacing: 0.01em;
+        }
+
+        .image-info p:first-child {
+            margin-top: 0;
+        }
+
+        .image-info p:last-child {
+            margin-bottom: 0;
         }
 
         .image-info strong {
             font-weight: 600;
-            color: #fff;
+            color: #2a2a2a;
+            display: inline-block;
+            min-width: 58px;
+            letter-spacing: 0.02em;
         }
 
         @media (max-width: 1024px) {
             .collage {
-                column-count: 2;
-                column-gap: 15px;
-                padding: 10px;
+                gap: 16px;
+            }
+
+            .column {
+                gap: 16px;
+            }
+
+            .column:nth-child(3) {
+                display: none;
             }
         }
 
         @media (max-width: 768px) {
             .collage {
-                column-count: 1;
-                column-gap: 0;
-                padding: 10px;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .column {
+                gap: 16px;
+            }
+
+            .column:nth-child(2),
+            .column:nth-child(3) {
+                display: none;
             }
 
             h1 {
-                font-size: 1.8rem;
-                margin-bottom: 20px;
+                font-size: 1.5rem;
+                margin-bottom: 32px;
             }
 
             body {
-                padding: 20px 10px;
+                padding: 24px 12px;
             }
         }
 
@@ -189,15 +183,15 @@
             top: 20px;
             right: 40px;
             color: white;
-            font-size: 40px;
+            font-size: 36px;
             font-weight: 300;
             cursor: pointer;
             z-index: 10000;
-            transition: color 0.3s;
+            transition: opacity 0.2s;
         }
 
         .lightbox-close:hover {
-            color: #ccc;
+            opacity: 0.7;
         }
 
         .lightbox-nav {
@@ -205,16 +199,16 @@
             top: 50%;
             transform: translateY(-50%);
             color: white;
-            font-size: 50px;
+            font-size: 48px;
             font-weight: 300;
             cursor: pointer;
             padding: 20px;
             user-select: none;
-            transition: color 0.3s;
+            transition: opacity 0.2s;
         }
 
         .lightbox-nav:hover {
-            color: #ccc;
+            opacity: 0.7;
         }
 
         .lightbox-prev {
@@ -233,16 +227,8 @@
             }
 
             .lightbox-nav {
-                font-size: 40px;
+                font-size: 36px;
                 padding: 10px;
-            }
-
-            .lightbox-prev {
-                left: 10px;
-            }
-
-            .lightbox-next {
-                right: 10px;
             }
         }
     </style>
@@ -251,145 +237,156 @@
     <div class="container">
         <h1>Data stories and visualisation on climate, nature and society</h1>
         <div class="collage">
-            <div class="image-wrapper">
-                <a href="https://csp.wwfindia.org/reviving-the-arkavathi-river/" target="_blank">
-                    <img src="1.png" alt="Reviving the Arkavathi River">
+            <!-- Column 1: First 4 images -->
+            <div class="column">
+                <div class="image-wrapper">
+                    <a href="https://csp.wwfindia.org/reviving-the-arkavathi-river/" target="_blank">
+                        <img src="1.png" alt="Reviving the Arkavathi River">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> Reviving Arkavathi, WWF-India</p>
                         <p><strong>Tool:</strong> QGIS, Svelte, Adobe Illustrator, Figma</p>
                         <p><strong>Dataset:</strong> Global Land Cover and Land Use Change, 2000-2020 (GLAD), OpenStreetMaps</p>
                     </div>
-                </a>
-            </div>
-            <div class="image-wrapper">
-                <a href="https://csp.wwfindia.org/reviving-the-arkavathi-river/" target="_blank">
-                    <img src="2.png" alt="Reviving the Arkavathi River">
+                </div>
+                <div class="image-wrapper">
+                    <a href="https://csp.wwfindia.org/reviving-the-arkavathi-river/" target="_blank">
+                        <img src="2.png" alt="Reviving the Arkavathi River">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> Reviving Arkavathi, WWF-India</p>
                         <p><strong>Tool:</strong> QGIS, Svelte, Figma</p>
                         <p><strong>Dataset:</strong> WWF research, OpenStreetMaps</p>
                     </div>
-                </a>
-            </div>
-            <div class="image-wrapper">
-                <a href="https://csp.wwfindia.org/reviving-the-arkavathi-river/" target="_blank">
-                    <img src="3.png" alt="Reviving the Arkavathi River">
+                </div>
+                <div class="image-wrapper">
+                    <a href="https://csp.wwfindia.org/reviving-the-arkavathi-river/" target="_blank">
+                        <img src="3.png" alt="Reviving the Arkavathi River">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> Reviving Arkavathi, WWF-India</p>
                         <p><strong>Tool:</strong> QGIS, Svelte, Figma</p>
                         <p><strong>Dataset:</strong> Google Earth/Maxar Technologies</p>
                     </div>
-                </a>
-            </div>
-            <div class="image-wrapper">
-                <a href="https://csp.wwfindia.org/reviving-the-arkavathi-river/" target="_blank">
-                    <img src="4a.png" alt="Reviving the Arkavathi River">
+                </div>
+                <div class="image-wrapper">
+                    <a href="https://csp.wwfindia.org/reviving-the-arkavathi-river/" target="_blank">
+                        <img src="4a.png" alt="Reviving the Arkavathi River">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> Reviving Arkavathi, WWF-India</p>
                         <p><strong>Tool:</strong> Adobe Illustrator</p>
                         <p><strong>Dataset:</strong> Central Ground Water Board</p>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="image-wrapper">
-                <a href="https://github.com/surbhi-bh/30-day-map-challenge/tree/main?tab=readme-ov-file" target="_blank">
-                    <img src="4.png" alt="30 Day Map Challenge">
+
+            <!-- Column 2: Next 5 images -->
+            <div class="column">
+                <div class="image-wrapper">
+                    <a href="https://github.com/surbhi-bh/30-day-map-challenge/tree/main?tab=readme-ov-file" target="_blank">
+                        <img src="4.png" alt="30 Day Map Challenge">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> #30DayMapChallenge</p>
                         <p><strong>Tool:</strong> QGIS</p>
                         <p><strong>Dataset:</strong> Shuttle Radar Topography Mission (SRTM)</p>
                     </div>
-                </a>
-            </div>
-            <div class="image-wrapper">
-                <a href="https://github.com/surbhi-bh/30-day-map-challenge/tree/main?tab=readme-ov-file" target="_blank">
-                    <img src="5.png" alt="30 Day Map Challenge">
+                </div>
+                <div class="image-wrapper">
+                    <a href="https://github.com/surbhi-bh/30-day-map-challenge/tree/main?tab=readme-ov-file" target="_blank">
+                        <img src="5.png" alt="30 Day Map Challenge">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> #30DayMapChallenge</p>
                         <p><strong>Tool:</strong> R</p>
                         <p><strong>Dataset:</strong> National Power Portal, Central Electricity Authority</p>
                     </div>
-                </a>
-            </div>
-            <div class="image-wrapper">
-                <a href="https://surbhi-bh.github.io/sdg17-climate-action-and-gender-equality.html" target="_blank">
-                    <img src="6.png" alt="Climate Action and Gender Equality">
+                </div>
+                <div class="image-wrapper">
+                    <a href="https://surbhi-bh.github.io/sdg17-climate-action-and-gender-equality.html" target="_blank">
+                        <img src="6.png" alt="Climate Action and Gender Equality">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> Climate action needs more women on board, Festival De Datos</p>
                         <p><strong>Tool:</strong> Tableau, R Markdown</p>
                         <p><strong>Dataset:</strong> World Economic Forum, Notre Dame University</p>
                     </div>
-                </a>
-            </div>
-            <div class="image-wrapper">
-                <a href="https://surbhi-bh.github.io/sdg17-climate-action-and-gender-equality.html" target="_blank">
-                    <img src="7.png" alt="Climate Action and Gender Equality">
+                </div>
+                <div class="image-wrapper">
+                    <a href="https://surbhi-bh.github.io/sdg17-climate-action-and-gender-equality.html" target="_blank">
+                        <img src="7.png" alt="Climate Action and Gender Equality">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> Climate action needs more women on board, Festival De Datos</p>
                         <p><strong>Tool:</strong> Tableau, R Markdown</p>
                         <p><strong>Dataset:</strong> ILO, FAO (accessed via Our World in Data)</p>
                     </div>
-                </a>
-            </div>
-            <div class="image-wrapper">
-                <a href="https://surbhi-bh.github.io/sdg17-climate-action-and-gender-equality.html" target="_blank">
-                    <img src="8.png" alt="Climate Action and Gender Equality">
-                    <div class="image-info">
-                        <p><strong>Source:</strong> Climate action needs more women on board, Festival De Datos</p>
-                        <p><strong>Tool:</strong> Tableau, R Markdown</p>
-                        <p><strong>Dataset:</strong> CarbonBrief</p>
-                    </div>
-                </a>
-            </div>
-            <div class="image-wrapper">
-                <a href="https://surbhi-bh.github.io/sdg17-climate-action-and-gender-equality.html" target="_blank">
-                    <img src="9.png" alt="Climate Action and Gender Equality">
+                </div>
+                <div class="image-wrapper">
+                    <a href="https://surbhi-bh.github.io/sdg17-climate-action-and-gender-equality.html" target="_blank">
+                        <img src="9.png" alt="Climate Action and Gender Equality">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> Climate action needs more women on board, Festival De Datos</p>
                         <p><strong>Tool:</strong> Tableau, R Markdown</p>
                         <p><strong>Dataset:</strong> UNFCCC</p>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="image-wrapper">
-                <a href="https://www.livemint.com/news/india/rich-states-hit-hard-in-slowdown-11578389525946.html" target="_blank">
-                    <img src="13.png" alt="State Economy Tracker">
+
+            <!-- Column 3: Remaining 5 images -->
+            <div class="column">
+                <div class="image-wrapper">
+                    <a href="https://surbhi-bh.github.io/sdg17-climate-action-and-gender-equality.html" target="_blank">
+                        <img src="8.png" alt="Climate Action and Gender Equality">
+                    </a>
+                    <div class="image-info">
+                        <p><strong>Source:</strong> Climate action needs more women on board, Festival De Datos</p>
+                        <p><strong>Tool:</strong> Tableau, R Markdown</p>
+                        <p><strong>Dataset:</strong> CarbonBrief</p>
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <a href="https://www.livemint.com/news/india/rich-states-hit-hard-in-slowdown-11578389525946.html" target="_blank">
+                        <img src="13.png" alt="State Economy Tracker">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> State Economy Tracker (Mint)</p>
                         <p><strong>Tool:</strong> R</p>
                         <p><strong>Dataset:</strong> Centre for Monitoring Indian Economy (CMIE)</p>
                     </div>
-                </a>
-            </div>
-            <div class="image-wrapper">
-                <a href="https://site.thibi.co/originals/india-groundwater-crisis" target="_blank">
-                    <img src="10.png" alt="India Groundwater Crisis">
+                </div>
+                <div class="image-wrapper">
+                    <a href="https://site.thibi.co/originals/india-groundwater-crisis" target="_blank">
+                        <img src="10.png" alt="India Groundwater Crisis">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> Deeper and Deeper: India's Water Race to the Bottom</p>
                         <p><strong>Tool:</strong> Maplibre</p>
                         <p><strong>Dataset:</strong> Aqueduct Water Risk Atlas</p>
                     </div>
-                </a>
-            </div>
-            <div class="image-wrapper">
-                <a href="https://site.thibi.co/originals/india-groundwater-crisis" target="_blank">
-                    <img src="11.png" alt="India Groundwater Crisis">
+                </div>
+                <div class="image-wrapper">
+                    <a href="https://site.thibi.co/originals/india-groundwater-crisis" target="_blank">
+                        <img src="11.png" alt="India Groundwater Crisis">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> Thibi and Earth Journalism Network, Environmental Data Journalism Academy</p>
                         <p><strong>Tool:</strong> Datawrapper</p>
                         <p><strong>Dataset:</strong> AQUASTAT Dissemination System, FAO</p>
                     </div>
-                </a>
-            </div>
-            <div class="image-wrapper">
-                <a href="https://site.thibi.co/originals/india-groundwater-crisis" target="_blank">
-                    <img src="12.png" alt="India Groundwater Crisis">
+                </div>
+                <div class="image-wrapper">
+                    <a href="https://site.thibi.co/originals/india-groundwater-crisis" target="_blank">
+                        <img src="12.png" alt="India Groundwater Crisis">
+                    </a>
                     <div class="image-info">
                         <p><strong>Source:</strong> Thibi and Earth Journalism Network, Environmental Data Journalism Academy</p>
                         <p><strong>Tool:</strong> Sankeymatic</p>
                         <p><strong>Dataset:</strong> Niti Aayog</p>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
@@ -450,21 +447,15 @@
             }
         });
 
-        // Add expand buttons to all images
+        // Open lightbox on image click
         document.addEventListener('DOMContentLoaded', function() {
             const imageWrappers = document.querySelectorAll('.image-wrapper a');
-            imageWrappers.forEach((wrapper, index) => {
+            imageWrappers.forEach((wrapper) => {
                 const img = wrapper.querySelector('img');
-                const expandBtn = document.createElement('button');
-                expandBtn.className = 'expand-btn';
-                expandBtn.innerHTML = '⤢';
-                expandBtn.title = 'Expand image';
-                expandBtn.onclick = function(e) {
+                wrapper.addEventListener('click', function(e) {
                     e.preventDefault();
-                    e.stopPropagation();
                     openLightbox(img.src.split('/').pop());
-                };
-                wrapper.appendChild(expandBtn);
+                });
             });
         });
     </script>
